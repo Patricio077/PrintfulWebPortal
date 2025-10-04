@@ -1,7 +1,3 @@
-// ===============================
-// Script.js - Printful Web Portal (Fixed with Login/Logout Toggle)
-// ===============================
-
 // 🔹 Utility: show/hide elements
 function showElement(el) {
   if (el) el.classList.remove("hidden");
@@ -301,4 +297,5 @@ else if (user === "user" && pass === "123456") {
       hideElement(addUserModal);
     }
   });
+
 
