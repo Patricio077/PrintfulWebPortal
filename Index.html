@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printful - Where Ideas Collide.</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+
+  <!-- Navigation Header -->
+<nav class="bg-white shadow-lg border-b-2 border-indigo-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo + Site Name -->
+      <div class="flex items-center space-x-2">
+        <img src="1stLOGO-Webportal.png" alt="Logo" class="h-12 w-auto">
+        <h1 class="text-4xl font-bold text-indigo-600">Printful</h1>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex items-center space-x-4">
+        <span id="userWelcome" class="text-gray-700 hidden">Welcome back!</span>
+
+        <!-- Login button (default visible) -->
+        <button id="loginBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition duration-200">
+          Login
+        </button>
+
+        <!-- Logout button (hidden by default) -->
+        <button id="logoutBtn" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition duration-200 hidden">
+          Logout
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Portal Login</h2>
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+            <input type="text" id="username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" required>
+          </div>
+          <div class="flex space-x-4">
+            <button type="submit" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg">Login</button>
+            <button type="button" id="cancelLogin" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded-lg">Cancel</button>
+          </div>
+        </form>
+        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+          <p class="text-sm text-blue-700"><strong>Demo Credentials:</strong></p>
+          <p class="text-sm text-blue-600">Username: admin | Password: password</p>
+          <p class="text-sm text-blue-600">Username: user | Password: 123456</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Public Section -->
+    <div id="publicSection" class="text-center mb-12 fade-in">
+      <h2 class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-teal-500 to-green-400 bg-clip-text text-transparent mb-6">Welcome to Printful!</h2>
+      <p class="text-1xl md:text-1xl font-semibold bg-gradient-to-r from-indigo-600 via-pink-500 to-yellow-500 bg-clip-text text-transparent leading-relaxed mb-8">
+        "Where Print and Precision Collide: From banners to business cards, we use brilliant color, fine detail, and unrivaled quality to make your ideas come to life."
+      </p>
+
+      <!-- Features -->
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition">
+          <div class="text-3xl mb-4">🔐</div>
+          <h3 class="text-lg font-semibold mb-2">Secure Authentication</h3>
+          <p class="text-gray-600">Advanced user management and secure login system</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition">
+          <div class="text-3xl mb-4">📊</div>
+          <h3 class="text-lg font-semibold mb-2">Data Management</h3>
+          <p class="text-gray-600">Complete CRUD operations with local storage backend</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition">
+          <div class="text-3xl mb-4">⚡</div>
+          <h3 class="text-lg font-semibold mb-2">Real-time Updates</h3>
+          <p class="text-gray-600">Get live updates about your appointment</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- Dashboard Section -->
+<div id="dashboardSection" class="hidden">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold text-indigo-700 mb-4">Dashboard</h2>
+    <p class="text-gray-600">Welcome to your dashboard! Manage users and view reports here.</p>
+  </div>
+
+  <!-- Example Dashboard Cards -->
+  <div class="grid md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-1 transition">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-600">Users</h3>
+      <p class="text-gray-600">Manage registered users and their roles.</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-1 transition">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-600">Orders</h3>
+      <p class="text-gray-600">Track printing orders and their status.</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-1 transition">
+      <h3 class="text-xl font-semibold mb-2 text-indigo-600">Reports</h3>
+      <p class="text-gray-600">Generate daily and monthly performance reports.</p>
+    </div>
+  </div>
+
+  <!-- Add User Button -->
+  <div class="flex justify-center">
+    <button id="openAddUser" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg shadow">
+      ➕ Add User
+    </button>
+  </div>
+</div>
+
+    </div>
+
+    <!-- Add User Modal -->
+    <div id="addUserModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Add New User</h2>
+        <form id="addUserForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+            <input type="text" id="newUsername" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <input type="email" id="newEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Role</label>
+            <select id="newRole" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="flex space-x-4">
+            <button type="submit" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">Add User</button>
+            <button type="button" id="cancelAddUser" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded-lg">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Custom JavaScript -->
+  <script src="Script.js"></script>
+</body>
+</html>

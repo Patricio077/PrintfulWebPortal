@@ -1,0 +1,23 @@
+/* Animations */
+.fade-in { animation: fadeIn 0.5s ease-in; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.slide-in { animation: slideIn 0.3s ease-out; }
+@keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+
+.modal-show { animation: modalIn 0.35s ease-out; }
+.modal-hide { animation: modalOut 0.25s ease-in forwards; }
+@keyframes modalIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+@keyframes modalOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.9); } }
+
+.notification { animation: slideDown 0.3s ease-out; }
+.notification.fade-out { animation: fadeOut 0.4s ease-in forwards; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
+
+/* Dashboard hover effect */
+#dashboardSection .bg-white { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+#dashboardSection .bg-white:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+/* Button active */
+button:active { transform: scale(0.96); }
